@@ -37,7 +37,9 @@ func ListActivities(skillID uint64, page int, limit int, sortBy string, sortOrde
 	db := bootstrap.DB
 
 	var activities []models.Activity
-	db.Preload("Participants.Skill").Preload("Skill").
+	db.Preload("Skill").
+		Preload("Participants.Skill").
+		Preload("Participants.Profile").
 		Limit(limit).Offset((page-1)*limit).
 		Order(clause.OrderByColumn{
 			Column: clause.Column{Name: sortBy},
@@ -61,7 +63,7 @@ func ListActivities(skillID uint64, page int, limit int, sortBy string, sortOrde
 			dtoParticipants = append(dtoParticipants, dto.ActivityParticipant{
 				ID:      p.ID,
 				Name:    p.Name,
-				Profile: p.Profile,
+				Profile: p.Profile.Name,
 				Skill:   skills,
 			})
 		}

@@ -12,6 +12,9 @@ import (
 func RegisterUser(body dto.RegistrationBody) error {
 	db := bootstrap.DB
 
+	var profile models.Profile
+	db.First(&profile, "name = ?", body.Profile)
+
 	var skills []models.Skill
 	for _, s := range body.Skill {
 		skills = append(skills, models.Skill{
@@ -31,7 +34,7 @@ func RegisterUser(body dto.RegistrationBody) error {
 		Email:    body.Email,
 		Username: body.Username,
 		Password: h,
-		Profile:  body.Profile,
+		Profile:  profile,
 		Skill:    skills,
 	}
 

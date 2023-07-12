@@ -12,7 +12,7 @@ func Login(body dto.LoginBody) (*dto.LoginSuccessResponse, error) {
 	db := bootstrap.DB
 
 	var user models.User
-	if err := db.First(&user, "username = ?", body.Username).Error; err != nil {
+	if err := db.Preload("Profile").First(&user, "username = ?", body.Username).Error; err != nil {
 		return nil, errors.New("invalid login")
 	}
 
@@ -20,9 +20,9 @@ func Login(body dto.LoginBody) (*dto.LoginSuccessResponse, error) {
 		return nil, errors.New("invalid login")
 	}
 
-	token, _ := helpers.CreateToken(user.ID, user.Profile)
+	token, _ := helpers.CreateToken(user.ID, user.Profile.Name)
 	return &dto.LoginSuccessResponse{
 		Token:   token,
-		Profile: user.Profile,
+		Profile: user.Profile.Name,
 	}, nil
 }

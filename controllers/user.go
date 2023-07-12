@@ -11,7 +11,7 @@ import (
 func RegisterUserRoutes(api fiber.Router) {
 	r := api.Group("/user")
 
-	r.Post("", middlewares.AllowProfiles("expert"), func(c *fiber.Ctx) error {
+	r.Post("", middlewares.AllowProfiles("board"), func(c *fiber.Ctx) error {
 		var body dto.RegistrationBody
 		if err := c.BodyParser(&body); err != nil {
 			return c.Status(400).JSON(dto.BaseResponse{

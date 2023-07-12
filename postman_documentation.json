@@ -1,0 +1,1840 @@
+{
+	"info": {
+		"_postman_id": "bce060cf-0e43-49c4-92a1-cb2cdc1fab62",
+		"name": "Gikslab Practical Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11921205"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"username\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"root\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 14:07:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "335"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjM2MDE2ODkxNzA4NzIsImp0aSI6ImY2YmU3NWZjLWUwZWQtNGQ5OC1iNzc1LTg5NGY5OGM0MTZjYSIsImlhdCI6MTY4OTE3MDg3MiwiaXNzIjoiZ2lrc2xhYi1wcmFjdGljYWwtdGVzdCIsIm5iZiI6MTY4OTE3MDg3MiwidXNlcl9pZCI6MSwidXNlcl9wcm9maWxlIjoiZXhwZXJ0In0.WE9-j40YnD3SqNs8VKEFwlQH3NITSjQ64XFGGA8fGys\",\n    \"profile\": \"expert\"\n}"
+						},
+						{
+							"name": "Success : Board User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"username\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 14:46:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "334"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjM2MDE2ODkxNzMxOTYsImp0aSI6IjM5NmEzNDBkLThhMmMtNDgyZC04ODZiLWVlNmE5MDFkZTEwNCIsImlhdCI6MTY4OTE3MzE5NiwiaXNzIjoiZ2lrc2xhYi1wcmFjdGljYWwtdGVzdCIsIm5iZiI6MTY4OTE3MzE5NiwidXNlcl9pZCI6MTcsInVzZXJfcHJvZmlsZSI6ImJvYXJkIn0.uRbLOuThdaKi2WZqOg3jTiKM3H6KkBkZT7tTBpN_eME\",\n    \"profile\": \"board\"\n}"
+						},
+						{
+							"name": "Invalid Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"root2\",\r\n    \"password\": \"root\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 14:08:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"invalid login\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{board_token_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/auth/logout?token={{board_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{board_token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{board_token_id}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/auth/logout?token={{board_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{board_token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 14:30:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"logout success\"\n}"
+						},
+						{
+							"name": "Invalid Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{board_token_id}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/auth/logout?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkCJ9.eyJleHAiOjM2MDE2ODkxNzA5MDYsImp0aSI6IjAyODAzYWYyLTI3NmQtNDk5My1hOGI4LTY4MTk1MWNkNWQzNiIsImlhdCI6MTY4OTE3MDkwNiwiaXNzIjoiZ2lrc2xhYi1wcmFjdGljYWwtdGVzdCIsIm5iZiI6MTY4OTE3MDkwNiwidXNlcl9pZCI6MSwidXNlcl9wcm9maWxlIjoiZXhwZXJ0In0.weA460Tbc2ZSZrIBAuhMpKMZlv5PXFSlbbj8dprP",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkCJ9.eyJleHAiOjM2MDE2ODkxNzA5MDYsImp0aSI6IjAyODAzYWYyLTI3NmQtNDk5My1hOGI4LTY4MTk1MWNkNWQzNiIsImlhdCI6MTY4OTE3MDkwNiwiaXNzIjoiZ2lrc2xhYi1wcmFjdGljYWwtdGVzdCIsIm5iZiI6MTY4OTE3MDkwNiwidXNlcl9pZCI6MSwidXNlcl9wcm9maWxlIjoiZXhwZXJ0In0.weA460Tbc2ZSZrIBAuhMpKMZlv5PXFSlbbj8dprP"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 14:42:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unauthorized user\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"username\": \"abdul\",\r\n    \"password\": \"password\",\r\n    \"email\": \"mail@mail.com\",\r\n    \"profile\": \"board\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user?token={{board_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{board_token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{board_token_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"name\",\r\n    \"username\": \"username\",\r\n    \"password\": \"password\",\r\n    \"email\": \"mail@mail.com\",\r\n    \"profile\": \"board\",\r\n    \"skill\": [\"a\", \"b\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user?token={{board_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{board_token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 14:46:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"create success\"\n}"
+						},
+						{
+							"name": "Invalid Body : Email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{board_token_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"name\",\r\n    \"username\": \"username\",\r\n    \"password\": \"password\",\r\n    \"email\": \"mail.com\",\r\n    \"profile\": \"board\",\r\n    \"skill\": [\"a\", \"b\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user?token={{board_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{board_token}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 14:47:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"invalid email address\"\n}"
+						},
+						{
+							"name": "Invalid Body : Profile",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"name\",\r\n    \"username\": \"username\",\r\n    \"password\": \"password\",\r\n    \"email\": \"mail@mail.com\",\r\n    \"profile\": \"boardah\",\r\n    \"skill\": [\"a\", \"b\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user?token={{board_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{board_token}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 14:47:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"profile must be either board, expert, trainer, or competitor\"\n}"
+						},
+						{
+							"name": "Unauthorized User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{expert_token_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"name\",\r\n    \"username\": \"username\",\r\n    \"password\": \"password\",\r\n    \"email\": \"mail@mail.com\",\r\n    \"profile\": \"board\",\r\n    \"skill\": [\"a\", \"b\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user?token={{expert_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{expert_token}}"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 15:08:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unauthorized user\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Skill",
+			"item": [
+				{
+					"name": "List of Skills",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{board_token_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/skill?token={{board_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"skill"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{board_token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{board_token_id}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/skill?token={{board_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"skill"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{board_token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 15:24:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"skill_name\": \"a\"\n    },\n    {\n        \"id\": 2,\n        \"skill_name\": \"b\"\n    },\n    {\n        \"id\": 3,\n        \"skill_name\": \"c\"\n    }\n]"
+						},
+						{
+							"name": "Unauthorized User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/skill",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"skill"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 15:24:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unauthorized user\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Activity",
+			"item": [
+				{
+					"name": "Register Activity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{expert_token_id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skill\": \"c\",\r\n    \"title\": \"lorem\",\r\n    \"description\": \"lorem ipsum\",\r\n    \"startdate\": \"2023-01-04T00:00:00Z\",\r\n    \"enddate\": \"2023-01-13T00:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/activity?token={{expert_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"activity"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{expert_token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{expert_token_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skill\": \"a\",\r\n    \"title\": \"lorem\",\r\n    \"description\": \"lorem ipsum\",\r\n    \"startdate\": \"2023-01-04T00:00:00Z\",\r\n    \"enddate\": \"2023-01-13T00:00:00Z\",\r\n    \"participants\": [\"root\", \"name\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/activity?token={{expert_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{expert_token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:26:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"create success\"\n}"
+						},
+						{
+							"name": "Success : No Participants",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{expert_token_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skill\": \"c\",\r\n    \"title\": \"lorem\",\r\n    \"description\": \"lorem ipsum\",\r\n    \"startdate\": \"2023-01-04T00:00:00Z\",\r\n    \"enddate\": \"2023-01-13T00:00:00Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/activity?token={{expert_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{expert_token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:39:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"create success\"\n}"
+						},
+						{
+							"name": "Invalid Body : End Date",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{expert_token_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skill\": \"c\",\r\n    \"title\": \"lorem\",\r\n    \"description\": \"lorem ipsum\",\r\n    \"startdate\": \"2023-01-04T00:00:00Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/activity?token={{expert_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{expert_token}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:40:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"enddate must not be empty\"\n}"
+						},
+						{
+							"name": "Unauthorized User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{board_token_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skill\": \"c\",\r\n    \"title\": \"lorem\",\r\n    \"description\": \"lorem ipsum\",\r\n    \"startdate\": \"2023-01-04T00:00:00Z\",\r\n    \"enddate\": \"2023-01-13T00:00:00Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/activity?token={{board_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{board_token}}"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:42:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unauthorized user\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Activity",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{expert_token_id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skill\": \"b\",\r\n    \"title\": \"lorem\",\r\n    \"description\": \"lorem ipsum\",\r\n    \"startdate\": \"2023-01-01T00:00:00Z\",\r\n    \"enddate\": \"2023-01-13T00:00:00Z\",\r\n    \"participants\": [\"root\", \"name\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/activity/77?token={{expert_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"activity",
+								"77"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{expert_token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{expert_token_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skill\": \"b\",\r\n    \"title\": \"lorem\",\r\n    \"description\": \"lorem ipsum\",\r\n    \"startdate\": \"2023-01-01T00:00:00Z\",\r\n    \"enddate\": \"2023-01-13T00:00:00Z\",\r\n    \"participants\": [\"root\", \"name\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/activity/1?token={{expert_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity",
+										"1"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{expert_token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:09:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"update success\"\n}"
+						},
+						{
+							"name": "Invalid Activity ID",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{expert_token_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skill\": \"b\",\r\n    \"title\": \"lorem\",\r\n    \"description\": \"lorem ipsum\",\r\n    \"startdate\": \"2023-01-01T00:00:00Z\",\r\n    \"enddate\": \"2023-01-13T00:00:00Z\",\r\n    \"participants\": [\"root\", \"name\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/activity/77?token={{expert_token_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity",
+										"77"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{expert_token_id}}"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:43:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"data cannot be processed\"\n}"
+						},
+						{
+							"name": "Unauthorized User",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{board_token_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skill\": \"b\",\r\n    \"title\": \"lorem\",\r\n    \"description\": \"lorem ipsum\",\r\n    \"startdate\": \"2023-01-01T00:00:00Z\",\r\n    \"enddate\": \"2023-01-13T00:00:00Z\",\r\n    \"participants\": [\"root\", \"name\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/activity/1?token={{board_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity",
+										"1"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{board_token}}"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:42:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unauthorized user\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List Activities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{board_token_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/activity/4?token={{board_token}}&sort_by=title&sort_order=desc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"activity",
+								"4"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{board_token}}"
+								},
+								{
+									"key": "sort_by",
+									"value": "title"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success : Pagination",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{board_token_id}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/activity/1?token={{board_token}}&page=2&limit=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity",
+										"1"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{board_token}}"
+										},
+										{
+											"key": "sort_by",
+											"value": "startdate",
+											"disabled": true
+										},
+										{
+											"key": "sort_order",
+											"value": "desc",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "limit",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:35:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "443"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"a\",\n        \"title\": \"lorem3\",\n        \"description\": \"lorem ipsum\",\n        \"startdate\": \"2023-01-02T00:00:00Z\",\n        \"enddate\": \"2023-01-13T00:00:00Z\",\n        \"participants\": [\n            {\n                \"id\": 2,\n                \"name\": \"name\",\n                \"profile\": \"board\",\n                \"skill\": [\n                    \"a\",\n                    \"b\"\n                ]\n            }\n        ]\n    },\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"a\",\n        \"title\": \"lorem2\",\n        \"description\": \"lorem ipsum\",\n        \"startdate\": \"2023-01-01T00:00:00Z\",\n        \"enddate\": \"2023-01-13T00:00:00Z\",\n        \"participants\": [\n            {\n                \"id\": 2,\n                \"name\": \"name\",\n                \"profile\": \"board\",\n                \"skill\": [\n                    \"a\",\n                    \"b\"\n                ]\n            }\n        ]\n    }\n]"
+						},
+						{
+							"name": "Success : Default Query Parameters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{board_token_id}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/activity/1?token={{board_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity",
+										"1"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{board_token}}"
+										},
+										{
+											"key": "sort_by",
+											"value": "startdate",
+											"disabled": true
+										},
+										{
+											"key": "sort_order",
+											"value": "desc",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:36:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "885"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"a\",\n        \"title\": \"lorem2\",\n        \"description\": \"lorem ipsum\",\n        \"startdate\": \"2023-01-01T00:00:00Z\",\n        \"enddate\": \"2023-01-13T00:00:00Z\",\n        \"participants\": [\n            {\n                \"id\": 2,\n                \"name\": \"name\",\n                \"profile\": \"board\",\n                \"skill\": [\n                    \"a\",\n                    \"b\"\n                ]\n            }\n        ]\n    },\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"a\",\n        \"title\": \"lorem3\",\n        \"description\": \"lorem ipsum\",\n        \"startdate\": \"2023-01-02T00:00:00Z\",\n        \"enddate\": \"2023-01-13T00:00:00Z\",\n        \"participants\": [\n            {\n                \"id\": 2,\n                \"name\": \"name\",\n                \"profile\": \"board\",\n                \"skill\": [\n                    \"a\",\n                    \"b\"\n                ]\n            }\n        ]\n    },\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"a\",\n        \"title\": \"lorem4\",\n        \"description\": \"lorem ipsum\",\n        \"startdate\": \"2023-01-03T00:00:00Z\",\n        \"enddate\": \"2023-01-13T00:00:00Z\",\n        \"participants\": [\n            {\n                \"id\": 2,\n                \"name\": \"name\",\n                \"profile\": \"board\",\n                \"skill\": [\n                    \"a\",\n                    \"b\"\n                ]\n            }\n        ]\n    },\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"a\",\n        \"title\": \"lorem5\",\n        \"description\": \"lorem ipsum\",\n        \"startdate\": \"2023-01-04T00:00:00Z\",\n        \"enddate\": \"2023-01-13T00:00:00Z\",\n        \"participants\": [\n            {\n                \"id\": 2,\n                \"name\": \"name\",\n                \"profile\": \"board\",\n                \"skill\": [\n                    \"a\",\n                    \"b\"\n                ]\n            }\n        ]\n    }\n]"
+						},
+						{
+							"name": "Success : Sort by Field",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{board_token_id}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/activity/1?token={{board_token}}&sort_by=title&sort_order=desc",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity",
+										"1"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{board_token}}"
+										},
+										{
+											"key": "sort_by",
+											"value": "title"
+										},
+										{
+											"key": "sort_order",
+											"value": "desc"
+										},
+										{
+											"key": "page",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:37:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "885"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"a\",\n        \"title\": \"lorem5\",\n        \"description\": \"lorem ipsum\",\n        \"startdate\": \"2023-01-04T00:00:00Z\",\n        \"enddate\": \"2023-01-13T00:00:00Z\",\n        \"participants\": [\n            {\n                \"id\": 2,\n                \"name\": \"name\",\n                \"profile\": \"board\",\n                \"skill\": [\n                    \"a\",\n                    \"b\"\n                ]\n            }\n        ]\n    },\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"a\",\n        \"title\": \"lorem4\",\n        \"description\": \"lorem ipsum\",\n        \"startdate\": \"2023-01-03T00:00:00Z\",\n        \"enddate\": \"2023-01-13T00:00:00Z\",\n        \"participants\": [\n            {\n                \"id\": 2,\n                \"name\": \"name\",\n                \"profile\": \"board\",\n                \"skill\": [\n                    \"a\",\n                    \"b\"\n                ]\n            }\n        ]\n    },\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"a\",\n        \"title\": \"lorem3\",\n        \"description\": \"lorem ipsum\",\n        \"startdate\": \"2023-01-02T00:00:00Z\",\n        \"enddate\": \"2023-01-13T00:00:00Z\",\n        \"participants\": [\n            {\n                \"id\": 2,\n                \"name\": \"name\",\n                \"profile\": \"board\",\n                \"skill\": [\n                    \"a\",\n                    \"b\"\n                ]\n            }\n        ]\n    },\n    {\n        \"skill_id\": 1,\n        \"skill_name\": \"a\",\n        \"title\": \"lorem2\",\n        \"description\": \"lorem ipsum\",\n        \"startdate\": \"2023-01-01T00:00:00Z\",\n        \"enddate\": \"2023-01-13T00:00:00Z\",\n        \"participants\": [\n            {\n                \"id\": 2,\n                \"name\": \"name\",\n                \"profile\": \"board\",\n                \"skill\": [\n                    \"a\",\n                    \"b\"\n                ]\n            }\n        ]\n    }\n]"
+						},
+						{
+							"name": "Unauthorized User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/activity/4?sort_by=title&sort_order=desc",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity",
+										"4"
+									],
+									"query": [
+										{
+											"key": "sort_by",
+											"value": "title"
+										},
+										{
+											"key": "sort_order",
+											"value": "desc"
+										},
+										{
+											"key": "page",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:47:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unauthorized user\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Activity",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{expert_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/activity/2?token={{expert_token}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"activity",
+								"2"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{expert_token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{expert_token_id}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/activity/1?token={{expert_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity",
+										"1"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{expert_token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 17:23:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"delete success\"\n}"
+						},
+						{
+							"name": "Invalid Activity ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{expert_token_id}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/activity/77?token={{expert_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity",
+										"77"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{expert_token}}"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:43:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"data cannot be processed\"\n}"
+						},
+						{
+							"name": "Unauthorized User",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{board_token_id}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/activity/1?token={{board_token}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"activity",
+										"1"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{board_token}}"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jul 2023 19:42:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unauthorized user\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

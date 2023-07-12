@@ -73,6 +73,10 @@ func ParseToken(token string) (*TokenClaims, error) {
 		return AppSecret, nil
 	})
 
+	if err != nil {
+		return nil, errors.New("invalid token")
+	}
+
 	if !t.Valid {
 		return nil, errors.New("invalid token")
 	}

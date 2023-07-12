@@ -16,6 +16,9 @@ func main() {
 	api := app.Group("/v1", cors.New())
 
 	controllers.RegisterAuthRoutes(api)
+	controllers.RegisterUserRoutes(api)
+	controllers.RegisterSkillRoutes(api)
+	controllers.RegisterActivityRoutes(api)
 
 	if err := app.Listen(os.Getenv("APP_HOST") + ":" + os.Getenv("APP_PORT")); err != nil {
 		panic(err.Error())

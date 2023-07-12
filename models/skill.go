@@ -2,5 +2,5 @@ package models
 
 type Skill struct {
 	Base
-	SkillName string `gorm:"index,unique"`
+	SkillName string `gorm:"uniqueIndex"`
 }

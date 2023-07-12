@@ -4,9 +4,11 @@ import "time"
 
 type Activity struct {
 	Base
-	Skill       Skill
-	Title       string    `json:"title"`
-	Description string    `json:"description"`
-	StartDate   time.Time `json:"startdate"`
-	EndDate     time.Time `json:"enddate"`
+	Skill        Skill `gorm:"foreignKey:SkillID"`
+	SkillID      uint64
+	Title        string
+	Description  string
+	StartDate    time.Time
+	EndDate      time.Time
+	Participants []User `gorm:"many2many:activity_users;"`
 }

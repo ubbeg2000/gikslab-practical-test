@@ -7,5 +7,6 @@ This repository contains an answer for Gikslab's Practical Test for Golang Backe
 To run this application, you must:
 
 1. Install Go version 1.19 or above
-2. Set environment variables listed on `.env.example` manually or by creating a `.env` file
-3. Run `go run main.go` to start the API
+2. Install SQLite version 3
+3. Set environment variables listed on `.env.example` manually or by creating a `.env` file
+4. Run `go run main.go` to start the API
